@@ -19,13 +19,15 @@ body {
   max-width: 850px;
   width: 100%;
   border-radius: 1rem;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
 .card-image {
   flex: 1;
   width: 40%;
+  overflow: hidden;
+  border-radius: 1rem 0 0 1rem;
 }
 
 .card-image .drawers {
@@ -62,6 +64,7 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
+  position: relative;
 }
 
 .avatar-image {
@@ -97,4 +100,103 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+.share-icon:hover {
+  background-color: hsl(210, 10%, 54%);
+  transition: all 0.3s ease;
+}
+.share-icon:hover img {
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 650px) {
+  .container {
+    max-width: 375px;
+    flex-direction: column;
+    margin: 2rem 1rem;
+  }
+
+  .card-image {
+    width: 100%;
+    flex: none;
+  }
+
+  .card-image .drawers {
+    height: 250px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .card-body {
+    padding: 2rem 1.8rem;
+    flex: none;
+  }
+
+  .content h1 {
+    font-size: 1.25rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .content .description {
+    font-size: 0.95rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .author-section {
+    gap: 1rem;
+  }
+}
+
+.share-popup {
+  display: none;
+  position: absolute;
+  background-color: hsl(217, 19%, 35%);
+  color: white;
+  padding: 0.8rem 2.5rem;
+  border-radius: 0.8rem;
+  bottom: 100%;
+  left: 65%;
+  align-content: center;
+  gap: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  white-space: nowrap;
+  transform: translateY(-12px);
+}
+
+.share-text {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: hsl(212, 23%, 69%);
+  letter-spacing: 2px;
+}
+
+.share-popup::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  right: 40%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid hsl(217, 19%, 35%);
+}
+
+.share-popup.show {
+  display: flex;
+}
+
+.social-icon img {
+  width: 15px;
+  height: 15px;
+  filter: brightness(0) invert(1);
+}
+
+.share-icon.active {
+  background-color: hsl(217, 19%, 35%);
+}
+
+.share-icon.active img {
+  filter: brightness(0) invert(1);
 }
