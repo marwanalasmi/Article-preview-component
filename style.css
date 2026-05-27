@@ -10,6 +10,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   min-height: 100vh;
 }
 
@@ -106,6 +107,7 @@ body {
   background-color: hsl(210, 10%, 54%);
   transition: all 0.3s ease;
 }
+
 .share-icon:hover img {
   filter: brightness(0) invert(1);
 }
@@ -200,3 +202,28 @@ body {
 .share-icon.active img {
   filter: brightness(0) invert(1);
 }
+
+.attribution {
+  font-size: 1rem;
+  font-weight: 700;
+  color: hsl(240, 1%, 21%);
+  margin-top: 1rem;
+}
+
+.attribution a {
+  color: hsl(217, 19%, 35%);
+  text-decoration: none;
+}
+
+.attribution a:visited {
+  color: hhsl(214, 17%, 51%);
+}
+
+.attribution a:hover {
+  color: hsl(212, 23%, 69%);
+  text-decoration: underline;
+}
+
+/* hsl(212, 23%, 69%) */
+/* hsl(214, 17%, 51%) */
+/* hsl(217, 19%, 35%) */
